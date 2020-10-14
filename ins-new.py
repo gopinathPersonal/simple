@@ -2,8 +2,8 @@ import boto3
 import sys
 
 region = 'us-west-2'
-accesskey = sys.argv[1]
-secretkey = sys.argv[2]
+accesskey = sys.argv[0]
+secretkey = sys.argv[1]
 
 
 client = boto3.client('ec2',region_name=region, aws_access_key_id=accesskey,aws_secret_access_key=secretkey)
