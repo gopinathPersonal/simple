@@ -1,11 +1,12 @@
 import boto3
 import sys
 
-accesskey = sys.argv[0]
-secretkey = sys.argv[1]
+region = 'us-west-2'
+accesskey = sys.argv[2]
+secretkey = sys.argv[3]
 
 
-client = boto3.client('ec2','us-west-2', aws_access_key_id=accesskey,aws_secret_access_key=secretkey)
+client = boto3.client('ec2',region_name=region, aws_access_key_id=accesskey,aws_secret_access_key=secretkey)
 
 data1 = client.describe_instances()
 for data2 in data1["Reservations"]:
